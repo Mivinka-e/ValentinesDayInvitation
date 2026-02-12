@@ -134,21 +134,27 @@ const noBtn = document.getElementById("noBtn");
 // Smooth movement animation
 noBtn.style.transition = "all 0.5s ease";
 
-// Move ONLY when cursor actually touches it
-noBtn.addEventListener("mouseover", function () {
-
+// Function to move the button
+function moveButton() {
     const maxX = window.innerWidth - noBtn.offsetWidth;
     const maxY = window.innerHeight - noBtn.offsetHeight;
 
     let randomX = Math.random() * maxX;
     let randomY = Math.random() * maxY;
-    
+
+    // Smooth interpolation
     randomX = noBtn.offsetLeft + (randomX - noBtn.offsetLeft) * 0.5;
     randomY = noBtn.offsetTop + (randomY - noBtn.offsetTop) * 0.5;
-    
+
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
-});
+}
+
+// Desktop hover
+noBtn.addEventListener("mouseover", moveButton);
+
+// Mobile touch
+noBtn.addEventListener("touchstart", moveButton);
 
 window.onload = function() {
     setTimeout(function() {
