@@ -147,6 +147,8 @@ noBtn.addEventListener("mouseover", function () {
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
 
+});
+    
 setTimeout(function() {
     const intro = document.getElementById("intro");
     intro.style.transition = "opacity 1s ease";
@@ -155,9 +157,8 @@ setTimeout(function() {
     setTimeout(function() {
         intro.style.display = "none";
     }, 1000);
-}, 2000);
 
-});
+}, 2000);
 </script>
 
 </body>
