@@ -82,8 +82,11 @@ button {
         Will you be my Valentine? 
         <span style="color: initial;">🥺 ✨</span>
    </h2>
-    <button id="yesBtn" onclick="showPage('page3')">Yes</button>
-    <button id="noBtn">No</button>
+   <h6 style="position:absolute; left:50%; top:320px; transform: translateX(40px);">
+       (Try this first ↴)
+   </h6>
+   <button id="yesBtn" onclick="showPage('page3')">Yes</button>
+   <button id="noBtn">No</button>
 </div>
 
 <!-- Page 3 -->
@@ -117,7 +120,7 @@ const noBtn = document.getElementById("noBtn");
 noBtn.style.transition = "all 0.5s ease";
 
 // Move ONLY when cursor actually touches it
-noBtn.addEventListener("mouseenter", function () {
+noBtn.addEventListener("mouseover", function () {
 
     const maxX = window.innerWidth - noBtn.offsetWidth;
     const maxY = window.innerHeight - noBtn.offsetHeight;
