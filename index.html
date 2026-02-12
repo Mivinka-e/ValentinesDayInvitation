@@ -46,6 +46,7 @@ button {
     color: white;
     position: absolute;
     left: 50%;
+    top: 350px;
     transform: translateX(-120px);
 }
 
@@ -54,8 +55,10 @@ button {
     color: white;
     position: absolute;
     left: 50%;
+    top: 350px;
     transform: translateX(40px);
 }
+
 
 </style>
 </head>
@@ -82,12 +85,13 @@ button {
         Will you be my Valentine? 
         <span style="color: initial;">🥺 ✨</span>
    </h2>
-   <h6 style="position:absolute; left:50%; top:320px; transform: translateX(40px);">
+   <h6 style="position:absolute; left:50%; top:320px; transform: translateX(40px); margin:0;">
        (Try this first ↴)
    </h6>
    <button id="yesBtn" onclick="showPage('page3')">Yes</button>
    <button id="noBtn">No</button>
 </div>
+
 
 <!-- Page 3 -->
 <div id="page3" class="page">
@@ -96,10 +100,10 @@ button {
         <span style="color: initial;">❤️</span><br><br>
         I’ll be happy to spend this Sunday with you in a romantic atmosphere, <br>
         hopefully good weather and… for sure good smells ^^ <br><br>
-        See you on Elias Blix gate in the morning.
+        See you on Elias Blix gate in the morning,
     </h3>
     <h1 class="script" style="font-size: 48px; margin-top: 40px;">
-        My dear Ivan
+        my dear Ivan
     </h1>
     <h3 style="font-style: italic; text-align: left; margin-left: 35%;">
     – Sarry
@@ -127,7 +131,10 @@ noBtn.addEventListener("mouseover", function () {
 
     let randomX = Math.random() * maxX;
     let randomY = Math.random() * maxY;
-
+    
+    randomX = noBtn.offsetLeft + (randomX - noBtn.offsetLeft) * 0.5;
+    randomY = noBtn.offsetTop + (randomY - noBtn.offsetTop) * 0.5;
+    
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
 });
