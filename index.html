@@ -146,19 +146,20 @@ noBtn.addEventListener("mouseover", function () {
     
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
-
 });
-    
-setTimeout(function() {
-    const intro = document.getElementById("intro");
-    intro.style.transition = "opacity 1s ease";
-    intro.style.opacity = "0";
 
+window.onload = function() {
     setTimeout(function() {
-        intro.style.display = "none";
-    }, 1000);
+        const intro = document.getElementById("intro");
+        intro.style.transition = "opacity 1s ease";
+        intro.style.opacity = "0";
 
-}, 2000);
+        setTimeout(function() {
+            intro.remove();
+        }, 1000);
+
+    }, 2000); // 2 seconds
+};
 </script>
 
 </body>
