@@ -45,6 +45,7 @@ button {
 }
 
 #yesBtn {
+    background: #2fa600;
     position: absolute;
     left: 50%;
     top: 300px;
@@ -52,7 +53,6 @@ button {
 }
 
 #noBtn {
-    background: #2fa600;
     position: absolute;
     left: 50%;
     top: 300px;
@@ -81,7 +81,7 @@ button {
     </h1>
     <h3>
         Dear Ivan,<br><br>
-        I have talked a lot about the special day on Sunday, Saint Valentine&#39;s Day.<br>
+        I have talked a lot about the special day on Saturday, Saint Valentine&#39;s Day.<br>
         And now, I'm officially sending you an online letter with a little question that<br>
         will determine how this time dedicated to love will unfold.<br>
         I hope you will take it responsibly and only follow what your heart tells you.<br>
@@ -134,27 +134,36 @@ const noBtn = document.getElementById("noBtn");
 // Smooth movement animation
 noBtn.style.transition = "all 0.5s ease";
 
-// Function to move the button
-function moveButton() {
+// Desktop: instant hover reaction
+noBtn.addEventListener("mouseover", function () {
     const maxX = window.innerWidth - noBtn.offsetWidth;
     const maxY = window.innerHeight - noBtn.offsetHeight;
 
     let randomX = Math.random() * maxX;
     let randomY = Math.random() * maxY;
 
-    // Smooth interpolation
+    // Keep the 0.5 interpolation if you like
     randomX = noBtn.offsetLeft + (randomX - noBtn.offsetLeft) * 0.5;
     randomY = noBtn.offsetTop + (randomY - noBtn.offsetTop) * 0.5;
 
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
-}
+});
 
-// Desktop hover
-noBtn.addEventListener("mouseover", moveButton);
+// Mobile: use the same function on touch
+noBtn.addEventListener("touchstart", function () {
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
 
-// Mobile touch
-noBtn.addEventListener("touchstart", moveButton);
+    let randomX = Math.random() * maxX;
+    let randomY = Math.random() * maxY;
+
+    randomX = noBtn.offsetLeft + (randomX - noBtn.offsetLeft) * 0.5;
+    randomY = noBtn.offsetTop + (randomY - noBtn.offsetTop) * 0.5;
+
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+});
 
 window.onload = function() {
     setTimeout(function() {
