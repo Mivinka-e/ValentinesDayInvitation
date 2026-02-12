@@ -40,11 +40,11 @@ button {
     cursor: pointer;
     border-radius: 8px;
     border: none;
+    background: #b11226;
+    color: white;
 }
 
 #yesBtn {
-    background: #4CAF50;
-    color: white;
     position: absolute;
     left: 50%;
     top: 300px;
@@ -52,19 +52,27 @@ button {
 }
 
 #noBtn {
-    background: #f44336;
-    color: white;
+    background: #2fa600;
     position: absolute;
     left: 50%;
     top: 300px;
     transform: translateX(40px);
 }
 
+#intro {
+    position: fixed;
+    inset: 0;
+    background: url('letter-final-gif.gif') no-repeat center top;
+    background-size: cover;
+    z-index: 9999;
+}
 
 </style>
 </head>
 
 <body>
+
+<div id="intro"></div>
 
 <!-- Page 1 -->
 <div id="page1" class="page active">
@@ -138,6 +146,17 @@ noBtn.addEventListener("mouseover", function () {
     
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
+
+setTimeout(function() {
+    const intro = document.getElementById("intro");
+    intro.style.transition = "opacity 1s ease";
+    intro.style.opacity = "0";
+
+    setTimeout(function() {
+        intro.style.display = "none";
+    }, 1000);
+}, 2000);
+
 });
 </script>
 
