@@ -30,6 +30,25 @@ body {
     display: block;
 }
 
+.button-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 40px;
+}
+
+.no-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.no-text {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: white;
+}
 button {
     padding: 12px 25px;
     font-size: 18px;
@@ -47,7 +66,7 @@ button {
 #noBtn {
     background: #f44336;
     color: white;
-    position: absolute;
+    position: relative;
 }
 </style>
 </head>
@@ -74,8 +93,13 @@ button {
         Will you be my Valentine? 
         <span style="color: initial;">🥺 ✨</span>
    </h2>
+    <div class="button-container">
+    <div class="no-wrapper">
+        <div class="no-text">Try this first ↴</div>
+        <button id="noBtn">No</button>
+    </div>
     <button id="yesBtn" onclick="showPage('page3')">Yes</button>
-    <button id="noBtn">No</button>
+</div>
 </div>
 
 <!-- Page 3 -->
