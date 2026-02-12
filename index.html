@@ -30,25 +30,6 @@ body {
     display: block;
 }
 
-.button-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
-    margin-top: 40px;
-}
-
-.no-wrapper {
-    position: relative;
-    text-align: center;
-}
-
-.no-text {
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: white;
-}
 button {
     padding: 12px 25px;
     font-size: 18px;
@@ -66,7 +47,7 @@ button {
 #noBtn {
     background: #f44336;
     color: white;
-    position: relative;
+    position: absolute;
 }
 </style>
 </head>
@@ -89,22 +70,19 @@ button {
 
 <!-- Page 2 -->
 <div id="page2" class="page">
+    <h2>Will you be my Valentine? &#129402; &#10024; </h2>
    <h2>
         Will you be my Valentine? 
         <span style="color: initial;">🥺 ✨</span>
    </h2>
-    <div class="button-container">
-    <div class="no-wrapper">
-        <div class="no-text">Try this first ↴</div>
-        <button id="noBtn">No</button>
-    </div>
     <button id="yesBtn" onclick="showPage('page3')">Yes</button>
-</div>
+    <button id="noBtn">No</button>
 </div>
 
 <!-- Page 3 -->
 <div id="page3" class="page">
     <h3>
+        Oww, that's so nice of you, and I'm choosing you too! &hearts; <br><br>
         Oww, that's so nice of you, and I'm choosing you too! 
         <span style="color: initial;">❤️</span><br><br>
         I’ll be happy to spend this Sunday with you in a romantic atmosphere, <br>
@@ -114,16 +92,9 @@ button {
     <h1 class="script" style="font-size: 48px; margin-top: 40px;">
         My dear Ivan
     </h1>
-    <p style="
-        font-family: Arial, sans-serif;
-        font-style: italic;
-        color: white;
-        text-align: left;
-        margin-left: 35%;
-        margin-top: 20px;
-        font-size: 24px;">
-        – Sarry
-    </p>
+    <h3 style="font-style: italic; text-align: left; margin-left: 35%; font-size: 24px;">
+    – Sarry
+    </h3>
 </div>
 
 <script>
