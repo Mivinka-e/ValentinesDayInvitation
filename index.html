@@ -74,21 +74,11 @@ function showPage(pageId) {
 
 const noBtn = document.getElementById("noBtn");
 
-// Make movement smooth
-noBtn.style.transition = "all 0.25s ease";
+// Smooth movement animation
+noBtn.style.transition = "all 0.2s ease";
 
-// Floating idle movement
-let floatInterval = setInterval(() => {
-    moveButtonRandom(80); // small movement while floating
-}, 1200);
-
-// When mouse gets close → BIG FAST ESCAPE
-noBtn.addEventListener("mouseover", function () {
-    moveButtonRandom(300); // big jump
-});
-
-// Function to move button
-function moveButtonRandom(distanceBoost) {
+// Move ONLY when cursor actually touches it
+noBtn.addEventListener("mouseenter", function () {
 
     const maxX = window.innerWidth - noBtn.offsetWidth;
     const maxY = window.innerHeight - noBtn.offsetHeight;
@@ -96,17 +86,9 @@ function moveButtonRandom(distanceBoost) {
     let randomX = Math.random() * maxX;
     let randomY = Math.random() * maxY;
 
-    // Boost distance so it jumps further
-    randomX += (Math.random() - 0.5) * distanceBoost;
-    randomY += (Math.random() - 0.5) * distanceBoost;
-
-    // Keep inside screen
-    randomX = Math.max(0, Math.min(maxX, randomX));
-    randomY = Math.max(0, Math.min(maxY, randomY));
-
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
-}
+});
 </script>
 
 </body>
